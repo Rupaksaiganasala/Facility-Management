@@ -1,0 +1,129 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+
+  justify-content: center;
+  color: white;
+}
+.auth-form-container,
+.login-form {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.auth-form-container,
+.register-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: lightpink;
+}
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  background-color: rgb(81, 224, 220);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+}
+.reg,
+.log {
+  text-align: center;
+  color: white;
+}
+.lgn {
+  color: white;
+}
+/* Lr.css */
+
+/* Spinner styles */
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-top: 8px solid #09f; /* Color of the spinning part */
+  border-radius: 50%;
+  width: 50px; /* Size of the spinner */
+  height: 50px; /* Size of the spinner */
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional styles for centering the spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Page circle animation */
+.page-circle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #09f; /* Background color for the circle effect */
+  border-radius: 50%;
+  display: none; /* Initially hidden */
+  transition: width 1s ease-in-out, height 1s ease-in-out;
+  z-index: 1000;
+}
+
+.page-circle.active {
+  display: block;
+  width: 300vw; /* Expands to cover the entire page */
+  height: 300vh;
+  top: -100vh;
+  left: -100vw;
+  z-index: 1000;
+}
+
+/* Hide the login form and container when the animation starts */
+.auth-form-container.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Fade out the form */
+}
+
+.a.hide {
+  background-color: transparent; /* Make the background transparent */
+  transition: background-color 0.5s ease-in-out;
+}
